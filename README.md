@@ -7,7 +7,7 @@
 
 <!-- <img src="exemplo-image.png" alt="imagem-do-repositorio"> -->
 
-> Uma API aberta e livre com informações sobre o máximo de Strain possíveis.
+> Uma API aberta e livre com informações sobre o máximo de Strains possíveis.
 
 ### Ajustes e melhorias
 
