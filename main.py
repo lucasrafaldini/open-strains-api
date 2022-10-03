@@ -2,6 +2,8 @@
 # from typing import Union
 
 from fastapi import FastAPI
+from services.gist_service import GistService
+
 
 app = FastAPI()
 
@@ -11,6 +13,8 @@ def healthy():
     return {"Health": "Everything is fine ;)"}
 
 
-# @app.get("/strains/{item_id}")
-# def read_item(item_id: int, q: Union[str, None] = None):
-#     return {"item_id": item_id, "q": q}
+@app.get("/strains/")
+def get_all_strains():
+    service = GistService()
+    response = service.get_gist()
+    return response
