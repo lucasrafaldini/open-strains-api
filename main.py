@@ -1,27 +1,36 @@
 # -*- coding: utf-8 -*-
 # from typing import Union
 
-from fastapi import FastAPI, Response, status
+from fastapi import FastAPI, Response, status, Request
 from difflib import SequenceMatcher
 from services.gist_service import GistService
 
+from slowapi.errors import RateLimitExceeded
+from slowapi import Limiter, _rate_limit_exceeded_handler
+from slowapi.util import get_remote_address
 
+limiter = Limiter(key_func=get_remote_address)
 app = FastAPI()
+app.state.limiter = limiter
+app.add_exception_handler(RateLimitExceeded, _rate_limit_exceeded_handler)
 
 
 @app.get("/")
-def healthy():
+@limiter.limit("5/minute")
+async def healthy(request: Request):
     return {"Health": "Everything is fine ;)"}
 
 
 @app.get("/strains/")
-def get_all_strains():
+@limiter.limit("5/minute")
+async def get_all_strains(request: Request):
     service = GistService()
     response = service.get_gist()
     return response
 
 @app.get("/strains/search/{strain_name}", status_code=status.HTTP_200_OK)
-def get_strain_by_name(strain_name: str, response: Response):
+@limiter.limit("5/minute")
+async def get_strain_by_name(strain_name: str, request: Request, response: Response):
     service = GistService()
     all_strains = service.get_gist()
     result = []
