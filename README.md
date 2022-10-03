@@ -19,7 +19,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [X] Endpoint para trazer todos os dados;
 - [ ] Teste unitários;
 - [ ] Cache em todos os endpoints;
-- [ ] Rate limits;
+- [X] Rate limits;
 
 ## 💻 Pré-requisitos
 
@@ -108,4 +108,3 @@ Quer fazer parte desse projeto? Clique [AQUI](CONTRIBUTING.md) e leia como contr
 ## 📝 Licença
 
 Esse projeto está sob licença. Veja o arquivo [LICENÇA](LICENSE.md) para mais detalhes.
-
