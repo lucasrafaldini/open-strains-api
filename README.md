@@ -13,10 +13,13 @@
 
 O projeto ainda está em desenvolvimento e as próximas atualizações serão voltadas nas seguintes tarefas:
 
-- [ ] Endpoint retornando busca por nome de Strain;
+- [X] Endpoint retornando busca por nome de Strain;
 - [ ] Endpoint retornando busca por efeitos de uso (em inglês);
 - [ ] Endpoint para trazer todas Strains (somente nome);
 - [X] Endpoint para trazer todos os dados;
+- [ ] Teste unitários;
+- [ ] Cache em todos os endpoints;
+- [ ] Rate limits;
 
 ## 💻 Pré-requisitos
 
