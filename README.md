@@ -16,6 +16,7 @@ O projeto ainda está em desenvolvimento e as próximas atualizações serão vo
 - [ ] Endpoint retornando busca por nome de Strain;
 - [ ] Endpoint retornando busca por efeitos de uso (em inglês);
 - [ ] Endpoint para trazer todas Strains (somente nome);
+- [X] Endpoint para trazer todos os dados;
 
 ## 💻 Pré-requisitos
 
